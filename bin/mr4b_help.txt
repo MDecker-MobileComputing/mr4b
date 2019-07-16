@@ -1,0 +1,14 @@
+
+Call: mr4b <command>
+
+List of commands: 
+
+    help: This help text
+    
+    register: Register current folder with Git repository.
+    
+    registerRecursively: Search recursively for Git repository folders below
+                         current folder and register them.
+
+    Supported Git commands: status, pull, fetch.
+

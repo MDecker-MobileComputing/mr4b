@@ -19,7 +19,7 @@ then
     exit
 fi
 
-readonly MESSAGE_NO_REPO_FOLDERS="\nNo Git-Repos are registered, so nothing to do.\n"
+readonly MESSAGE_NO_REPO_FOLDERS="\nNo Git repository folders are registered, so nothing to do.\n"
 
 if [ ! -f "${REPO_LIST_FILE}" ]
 then
