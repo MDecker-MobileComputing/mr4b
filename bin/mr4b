@@ -1,0 +1,53 @@
+#!/bin/bash
+
+function HINT_HELP_COMMAND() {
+
+    echo -e "Call 'mr4b help' for list of commands.\n"
+}
+
+
+# So far exactly one command must be specified
+
+if [ $# -ne 1 ]
+then
+    echo -e "\nInvalid call without command."
+    HINT_HELP_COMMAND
+    exit
+fi
+
+COMMAND_STRING=$1
+
+
+# Variable to be read by called scripts
+REPO_LIST_FILE=~/.mr4b_repos
+
+
+if [ $COMMAND_STRING == "help" ]
+then
+    source $(dirname "$0")/modules/mr4b_Help.sh # https://stackoverflow.com/questions/38978650/
+    exit
+fi
+
+# Register Git repo in current folder
+if [ $COMMAND_STRING == "register" ]
+then
+    source $(dirname "$0")/modules/mr4b_RegisterRepo.sh
+    exit
+fi
+
+if [ $COMMAND_STRING == "registerRecursively" ]
+then
+    source $(dirname "$0")/modules/mr4b_RegisterAllRepos.sh
+    exit
+fi    
+
+# Execute a Git command on all repos
+if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" ]     
+then
+    source $(dirname "$0")/modules/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
+    exit
+fi
+
+
+echo -e "\nUnknown command '"${COMMAND_STRING}"'.\n"
+HINT_HELP_COMMAND
