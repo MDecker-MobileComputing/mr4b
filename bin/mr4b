@@ -38,7 +38,7 @@ fi
 
 if [ $COMMAND_STRING == "registerRecursively" ]
 then
-    source $(dirname "$0")/modules/mr4b_RegisterAllRepos.sh
+    source $(dirname "$0")/modules/mr4b_RegisterRecursively.sh
     exit
 fi    
 
