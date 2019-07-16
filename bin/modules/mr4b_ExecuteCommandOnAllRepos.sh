@@ -69,10 +69,11 @@ FOLDER_BEFORE_WORK=$(pwd)
 COUNTER=1
 for REPO_FOLDER in "${REPO_FOLDERS_ARRAY[@]}" 
 do
-  echo -e "\n\nProcessing repo folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):\n"
+  echo -e "\nProcessing repo folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):\n"
   cd $REPO_FOLDER
   git $GIT_COMMAND
   let COUNTER+=1
+  echo
 done
 
 cd "${FOLDER_BEFORE_WORK}"

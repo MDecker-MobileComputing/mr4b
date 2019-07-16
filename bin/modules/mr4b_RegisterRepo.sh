@@ -29,4 +29,4 @@ fi
 
 # When we come to this point, then $CURRENT_DIR has to be appended to the repo list file
 echo $CURRENT_DIR >> "${REPO_LIST_FILE}"
-echo -e "\nThe following entry was added to the repository list file: "${CURRENT_DIR}"\n"
+echo -e "\nThe following entry was added to the repository list file:\n"${CURRENT_DIR}"\n"

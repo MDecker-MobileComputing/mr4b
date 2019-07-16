@@ -8,7 +8,6 @@ function HINT_HELP_COMMAND() {
 
 
 # So far exactly one command must be specified
-
 if [ $# -ne 1 ]
 then
     echo -e "\nInvalid call without command."
@@ -48,7 +47,6 @@ then
     source $(dirname "$0")/modules/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
     exit
 fi
-
 
 echo -e "\nUnknown command '"${COMMAND_STRING}"'.\n"
 HINT_HELP_COMMAND
