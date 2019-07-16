@@ -9,6 +9,16 @@ then
     exit
 fi
 
+readonly GIT_COMMAND=$1
+
+
+# Whitelisting supported Git commands
+if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a ! $GIT_COMMAND == "status" ]     
+then
+    echo -e "\nUnsupported command '"${GIT_COMMAND}"' -- aborting program.\n"
+    exit
+fi
+
 readonly MESSAGE_NO_REPO_FOLDERS="\nNo Git-Repos are registered, so nothing to do.\n"
 
 if [ ! -f "${REPO_LIST_FILE}" ]
@@ -18,7 +28,7 @@ then
 fi
 
 
-# Build array of registered folders
+# ### Build array of registered folders (i.e. evaluate repo list file) ###
 
 declare -a REPO_FOLDERS_ARRAY
 
@@ -51,27 +61,18 @@ then
 fi
 
 
-GIT_COMMAND=$1
 
-if [ $GIT_COMMAND == "pull" ]
-then
-    echo "Sollte jetzt Git-Repos pullen ..."
-    exit
-fi
+# ### Execute the git command in all the relevant repo folder ###
 
-if [ $GIT_COMMAND == "fetch" ]
-then
-    echo "Sollte jetzt Git-Repos fetchen ..."
-    exit
-fi
+FOLDER_BEFORE_WORK=$(pwd)
 
+COUNTER=1
+for REPO_FOLDER in "${REPO_FOLDERS_ARRAY[@]}" 
+do
+  echo -e "\n\nProcessing repo folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):\n"
+  cd $REPO_FOLDER
+  git $GIT_COMMAND
+  let COUNTER+=1
+done
 
-if [ $GIT_COMMAND == "status" ]
-then
-    echo "Sollte jetzt Status von allen Git-Repos abrufen ..."
-    exit
-fi
-
-
-echo -e "\nINTERAL ERROR: Call for unsupported Git command '"${GIT_COMMAND}"'.\n"
-exit
+cd "${FOLDER_BEFORE_WORK}"
