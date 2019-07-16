@@ -19,7 +19,7 @@ COMMAND_STRING=$1
 
 
 # Variable to be read by called scripts
-REPO_LIST_FILE=~/.mr4b_repos
+readonly REPO_LIST_FILE=~/.mr4b_repos
 
 
 if [ $COMMAND_STRING == "help" ]
