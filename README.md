@@ -11,7 +11,7 @@ and also on MacOS.
 
 <br>
 
-This mr4b was inspired by [myrepos](https://myrepos.branchable.com/).
+mr4b was inspired by [myrepos](https://myrepos.branchable.com/).
 
 <br>
 

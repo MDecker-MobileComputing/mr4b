@@ -25,12 +25,6 @@ readonly VERSION_OF_MR4B=0.9
 readonly REPO_LIST_FILE=~/.mr4b_repos
 
 
-if [ $COMMAND_STRING == "help" ]
-then
-    cat $(dirname "$0")/mr4b_help.txt
-    exit
-fi
-
 # Register Git repo in current folder
 if [ $COMMAND_STRING == "register" ]
 then
@@ -44,16 +38,24 @@ then
     exit
 fi
 
+# Execute a Git command on all repositories
+if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" -o $COMMAND_STRING == "gc" ]
+then
+    source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
+    exit
+fi
+
+# Now handle the commands which are directly implemented in this script
+
 if [ $COMMAND_STRING == "version" ]
 then
     echo -e "\nVersion "${VERSION_OF_MR4B}" of mr4b."
     exit
 fi
 
-# Execute a Git command on all repositories
-if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" -o $COMMAND_STRING == "gc" ]
+if [ $COMMAND_STRING == "help" ]
 then
-    source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
+    cat $(dirname "$0")/mr4b_help.txt
     exit
 fi
 

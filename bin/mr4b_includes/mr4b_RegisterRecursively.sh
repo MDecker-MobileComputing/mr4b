@@ -21,7 +21,7 @@ fi
 # Ensure that Repository List File exists
 if [ ! -f "${REPO_LIST_FILE}" ]
 then
-    source $(dirname "$0")/modules/mr4b_CreateRepoFile.sh
+    source $(dirname "$0")/mr4b_includes/mr4b_CreateRepoFile.sh
 fi
 
 
