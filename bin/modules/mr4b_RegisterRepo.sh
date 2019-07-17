@@ -6,10 +6,7 @@ CURRENT_DIR=$(pwd)
 
 if [ ! -f "${REPO_LIST_FILE}" ]
 then
-    echo    "# Each non-empty line which is not commented out like this line must contain full path to a folder with a registered repo."  > "${REPO_LIST_FILE}"
-    echo -e "# This repo list file was created at "$(date)".\n"                                                                          >> "${REPO_LIST_FILE}"
-
-    echo -e "\nRepository List File "${REPO_LIST_FILE}" was created.\n"
+    source $(dirname "$0")/modules/mr4b_CreateRepoFile.sh
 else
     grep "${CURRENT_DIR}" "${REPO_LIST_FILE}" > /dev/null 2> /dev/null
     if [ $? -eq 0 ]

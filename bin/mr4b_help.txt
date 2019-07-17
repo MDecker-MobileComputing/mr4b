@@ -8,7 +8,10 @@ List of commands:
     register: Register current folder with Git repository.
     
     registerRecursively: Search recursively for Git repository folders below
-                         current folder and register them.
+                         current folder and register them. This command might
+                         take several minutes or even hours, depending on the
+                         number of direct & indirect subfolders below the current
+                         folder.
 
     status: Git command "status" on all registered repositories.
 
@@ -19,7 +22,10 @@ List of commands:
     gc: Git command "gc --auto" (garbage collection if needed)
 
 
-List of registered repository folders is maintained in file ~/.mr4b_repos
+Repository List File
 
-Individual lines can be commented out in this file by adding a "#" at the 
-beginning of the file.
+    List of registered repository folders is maintained in a hidden file in the
+    user home directory (~/.mr4b_repos).
+
+    Individual lines can be commented out in this file by adding a "#" at the 
+    beginning of the line, empty lines are ignored.
