@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is the "frontend script" to be called by the user, which delegates the actual work to the scripts in subfolder "modules"
+# This is the "frontend script" to be called by the user, which delegates the actual work to the scripts in subfolder "modules".
 
 function HINT_HELP_COMMAND() {
     echo -e "Call 'mr4b help' for list of commands.\n"
@@ -41,8 +41,8 @@ then
     exit
 fi    
 
-# Execute a Git command on all repos
-if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" ]     
+# Execute a Git command on all repositories
+if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" -o $COMMAND_STRING == "gc" ]     
 then
     source $(dirname "$0")/modules/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
     exit

@@ -13,7 +13,7 @@ readonly GIT_COMMAND=$1
 
 
 # Whitelisting supported Git commands
-if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a ! $GIT_COMMAND == "status" ]     
+if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a ! $GIT_COMMAND == "status" -a ! $GIT_COMMAND == "gc" ]     
 then
     echo -e "\nUnsupported command '"${GIT_COMMAND}"' -- aborting program.\n"
     exit

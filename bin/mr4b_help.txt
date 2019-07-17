@@ -10,5 +10,16 @@ List of commands:
     registerRecursively: Search recursively for Git repository folders below
                          current folder and register them.
 
-    Supported Git commands: status, pull, fetch.
+    status: Git command "status" on all registered repositories.
 
+    pull: Git command "pull" on all registered repositories.
+    
+    fetch: Git command "fetch" on all registered repositories.
+    
+    gc: Git command "gc --auto" (garbage collection if needed)
+
+
+List of registered repository folders is maintained in file ~/.mr4b_repos
+
+Individual lines can be commented out in this file by adding a "#" at the 
+beginning of the file.
