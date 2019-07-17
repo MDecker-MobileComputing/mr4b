@@ -32,4 +32,6 @@ Repository List File ~/.mr4b_repos
     The list of registered repository folders is maintained in a hidden file
     in the user home directory. Individual lines in this file can be commented
     out by adding a "#" at the beginning of the line. Empty lines in this file
-    are ignored.
+    are ignored. 
+    
+    The file will be created upon the first (successful) registration operation.

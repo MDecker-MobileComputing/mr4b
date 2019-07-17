@@ -11,6 +11,8 @@ fi
 
 readonly GIT_COMMAND=$1
 
+readonly STOPWATCH_START=$(date +%s) # Store number of seconds since 1st January 2019
+
 
 # Whitelisting supported Git commands
 if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a ! $GIT_COMMAND == "status" -a ! $GIT_COMMAND == "gc" ]     
@@ -77,3 +79,8 @@ do
 done
 
 cd "${FOLDER_BEFORE_WORK}"
+
+
+readonly STOPWATCH_STOP=$(date +%s)
+RUNTIME_SECONDS=$((  $STOPWATCH_STOP - $STOPWATCH_START ))
+echo -e "\nTotal runtime: "${RUNTIME_SECONDS}" seconds\n"

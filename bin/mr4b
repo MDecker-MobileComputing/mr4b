@@ -55,7 +55,7 @@ fi
 
 if [ $COMMAND_STRING == "help" ]
 then
-    cat $(dirname "$0")/mr4b_help.txt
+    cat $(dirname "$0")/mr4b_includes/mr4b_help.txt
     exit
 fi
 
