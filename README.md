@@ -1,17 +1,20 @@
 # My Git-Repositories for Bash (mr4b) ##
 
-*mr4b* is a command line utility to perform mass operations on Git repositories on the local machine. 
-It is just a collection ob Bash scripts and therefore should run on most Linux(-like) environments. 
-In contrast to many competiting solutions for performing mass operations on Git repositories it does
-not required a special scripting language like *Python* or *Perl* and therefore should also run on
-restricted or "emulated" Linux environments like [Cygwin](https://www.cygwin.com/) or [MinGW](http://www.mingw.org/) 
-on Windows.
+*mr4b* is a command line utility to perform mass operations on [Git](https://git-scm.com/) repositories on the local machine. 
+It is just a collection of Bash scripts and therefore should run on most Linux(-like) environments. 
+
+In contrast to many competiting solutions for performing mass operations on Git repositories *mr4b* does
+not required a special scripting language like Python or Perl and therefore should also run on most
+restricted or "emulated" Linux environments with the Bash shell and Git.
+For example, it runs in [Cygwin](https://www.cygwin.com/) or [MinGW](http://www.mingw.org/) on Windows
+and also on MacOS.
 
 <br>
 
 This mr4b was inspired by [myrepos](https://myrepos.branchable.com/).
 
 <br>
+
 
 ## Installation ##
 
@@ -24,6 +27,6 @@ of your Linux environment.
 * **Option 2:**
   Clone or download the repository and copy the contents of its `bin/` folder
   to a folder which is already in your `PATH` variable, e.g. `/usr/bin/`. 
-  The subfolder `modules` has also to be copied.
+  The subfolder `mr4b_includes` has also to be copied.
   For the example of `/usr/bin/` this would mean `/usr/bin/mr4b` and
-   `/usr/bin/mr4b/modules/...`
+   `/usr/bin/mr4b/mr4b_includes/...`

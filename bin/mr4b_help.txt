@@ -1,31 +1,35 @@
 
-Call: mr4b <command>
+Usage: mr4b <command>
 
-List of commands: 
+Application to perform Git operations on all registered local Git repositories.
 
-    help: This help text
-    
+
+List of commands:
+
+    help: This help text.
+
     register: Register current folder with Git repository.
-    
+
     registerRecursively: Search recursively for Git repository folders below
                          current folder and register them. This command might
                          take several minutes or even hours, depending on the
-                         number of direct & indirect subfolders below the current
-                         folder.
+                         number of direct & indirect subfolders below the
+                         current folder.
+
+    version: Outputs info about current version of program.
 
     status: Git command "status" on all registered repositories.
 
     pull: Git command "pull" on all registered repositories.
-    
+
     fetch: Git command "fetch" on all registered repositories.
-    
-    gc: Git command "gc --auto" (garbage collection if needed)
+
+    gc: Git command "gc --auto" (garbage collection if needed).
 
 
-Repository List File
+Repository List File ~/.mr4b_repos
 
-    List of registered repository folders is maintained in a hidden file in the
-    user home directory (~/.mr4b_repos).
-
-    Individual lines can be commented out in this file by adding a "#" at the 
-    beginning of the line, empty lines are ignored.
+    The list of registered repository folders is maintained in a hidden file
+    in the user home directory. Individual lines in this file can be commented
+    out by adding a "#" at the beginning of the line. Empty lines in this file
+    are ignored.

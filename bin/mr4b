@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is the "frontend script" to be called by the user, which delegates the actual work to the scripts in subfolder "modules".
+# This is the "frontend script" to be called by the user, which delegates the actual work to the scripts in subfolder "mr4b_includes".
 
 
 function HINT_HELP_COMMAND() {
@@ -18,6 +18,8 @@ fi
 
 readonly COMMAND_STRING=$1
 
+readonly VERSION_OF_MR4B=0.9
+
 
 # Variable to be read by called scripts
 readonly REPO_LIST_FILE=~/.mr4b_repos
@@ -32,20 +34,26 @@ fi
 # Register Git repo in current folder
 if [ $COMMAND_STRING == "register" ]
 then
-    source $(dirname "$0")/modules/mr4b_RegisterRepo.sh # https://stackoverflow.com/questions/38978650/
+    source $(dirname "$0")/mr4b_includes/mr4b_RegisterRepo.sh # https://stackoverflow.com/questions/38978650/
     exit
 fi
 
 if [ $COMMAND_STRING == "registerRecursively" ]
 then
-    source $(dirname "$0")/modules/mr4b_RegisterRecursively.sh
+    source $(dirname "$0")/mr4b_includes/mr4b_RegisterRecursively.sh
     exit
-fi    
+fi
+
+if [ $COMMAND_STRING == "version" ]
+then
+    echo -e "\nVersion "${VERSION_OF_MR4B}" of mr4b."
+    exit
+fi
 
 # Execute a Git command on all repositories
-if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" -o $COMMAND_STRING == "gc" ]     
+if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" -o $COMMAND_STRING == "gc" ]
 then
-    source $(dirname "$0")/modules/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
+    source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
     exit
 fi
 
