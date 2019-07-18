@@ -77,4 +77,4 @@ You can also perform `git pull` for all registered repos with one command:
 
     mr4b pull
 
-    
+Since the latter one requires network interaction, *mr4b* will wait a few seconds between the individual calls of `git pull`.

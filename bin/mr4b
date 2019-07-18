@@ -39,7 +39,11 @@ then
 fi
 
 # Execute a Git command on all repositories
-if [ $COMMAND_STRING == "pull" -o $COMMAND_STRING == "fetch" -o $COMMAND_STRING == "status" -o $COMMAND_STRING == "gc" ]
+if [ $COMMAND_STRING == "pull"   -o \
+     $COMMAND_STRING == "fetch"  -o \
+     $COMMAND_STRING == "merge"  -o \
+     $COMMAND_STRING == "status" -o \
+     $COMMAND_STRING == "gc" ]
 then
     source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $COMMAND_STRING
     exit

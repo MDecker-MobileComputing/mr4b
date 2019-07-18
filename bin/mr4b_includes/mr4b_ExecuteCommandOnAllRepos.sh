@@ -15,7 +15,7 @@ readonly STOPWATCH_START=$(date +%s) # Store number of seconds since 1st January
 
 
 # Whitelisting supported Git commands
-if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a ! $GIT_COMMAND == "status" -a ! $GIT_COMMAND == "gc" ]     
+if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a $ GIT_COMMAND == "merge" -a ! $GIT_COMMAND == "status" -a ! $GIT_COMMAND == "gc" ]     
 then
     echo -e "\nUnsupported command '"${GIT_COMMAND}"' -- aborting program.\n"
     exit
@@ -63,24 +63,41 @@ then
 fi
 
 
+# For Git commands which perform networks requests a sleep time is to be enforced between the
+# command executions to prevent too much load .
+SLEEP_TIME_SECONDS=0
+if [ $GIT_COMMAND == "pull" -o $GIT_COMMAND == "fetch" ]
+then
+    SLEEP_TIME_SECONDS=10
+    echo -e "\nGit command requires network operations, therefore wait time of "${SLEEP_TIME_SECONDS}" seconds"
+    echo -e "between command executions.\n"
+fi
 
-# ### Execute the git command in all the relevant repo folder ###
+
+
+# ### Execute the git command in all the relevant repository folders ###
 
 FOLDER_BEFORE_WORK=$(pwd)
 
 COUNTER=1
 for REPO_FOLDER in "${REPO_FOLDERS_ARRAY[@]}" 
 do
-  echo -e "\nProcessing repo folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):\n"
+  echo -e "\nProcessing repository folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):"
   cd $REPO_FOLDER
   git $GIT_COMMAND
   let COUNTER+=1
   echo
+  
+  if [ $SLEEP_TIME_SECONDS -gt 0 ]
+  then
+    echo -e "\nWaiting for "${SLEEP_TIME_SECONDS}" seconds ...\n"
+    sleep $SLEEP_TIME_SECONDS    
+  fi
 done
 
 cd "${FOLDER_BEFORE_WORK}"
 
 
 readonly STOPWATCH_STOP=$(date +%s)
-RUNTIME_SECONDS=$((  $STOPWATCH_STOP - $STOPWATCH_START ))
+RUNTIME_SECONDS=$(( $STOPWATCH_STOP - $STOPWATCH_START ))
 echo -e "\nTotal runtime: "${RUNTIME_SECONDS}" seconds\n"

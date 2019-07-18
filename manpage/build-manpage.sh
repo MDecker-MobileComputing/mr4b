@@ -12,3 +12,6 @@ gzip -c mr4b.1 > ${TARGET_FOLDER}/mr4b.1.gz
 
 echo -e "\nMan page was created: "$(find output -type f)
 echo
+
+# Copy gzipped file to appropriate folder for man system on your Linux distribution,
+# e.g. /usr/share/man/man1 for Debian-based distributions or OpenSuse.
