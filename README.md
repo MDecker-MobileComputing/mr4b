@@ -51,8 +51,24 @@ After this you can register a further folder:
 
 <br>
 
-After this you can execute certain Git command (those commands that are supported by *mr4b*)
-on all the registered Git repository folders with just one command. 
+It is also possible to register all Git repository folders that are below the current folder. Let's assume you have the following folder structure:
+
+    /abc/GitRepo-1
+    /abc/def/ProjectA/GitRepo-2
+    /abc/def/ProjectA/GitRepo-3
+    /xyz/GitRepo-4
+    
+Now go into folder `/abc` and call `registerResursively`:
+
+    cd /abc
+    mr4b registerResursively
+    
+The result will be that `GitRepo-1`, `GitRep-2` and `GitRepo-3` are registered, but not `GitRepo-4`.
+
+<br>    
+
+If at least one repository folder is registered, then you can execute one of the supported Git commands on all the registered Git repository folders 
+with just one command. 
 For example, to get the Git status information on all registered repositories:
 
     mr4b status
