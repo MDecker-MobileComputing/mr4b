@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# This project is licensed under the terms of the GNU GENERAL PUBLIC LICENSE version 3.
 
 echo -e "\nDepending on the number of direct and indirect folders below"
 echo -e "the current folder, this operation might take several minutes.\n"

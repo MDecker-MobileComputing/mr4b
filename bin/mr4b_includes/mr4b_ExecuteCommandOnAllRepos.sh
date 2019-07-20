@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This script execute the git command in $1 on all registered repos.
+#
+# This project is licensed under the terms of the GNU GENERAL PUBLIC LICENSE version 3.
 
 
 if [ $# -ne 1 ]

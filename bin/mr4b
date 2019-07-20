@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This is the "frontend script" to be called by the user, which delegates the actual work to the scripts in subfolder "mr4b_includes".
+#
+# This project is licensed under the terms of the GNU GENERAL PUBLIC LICENSE version 3.
 
 
 function HINT_HELP_COMMAND() {

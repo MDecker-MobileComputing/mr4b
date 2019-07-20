@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # This script is to be called when repo list file is to be created.
+#
+# This project is licensed under the terms of the GNU GENERAL PUBLIC LICENSE version 3.
+
 
 if [ -f "${REPO_LIST_FILE}" ]
 then

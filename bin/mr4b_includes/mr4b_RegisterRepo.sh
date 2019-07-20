@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # This script is called to add the current directory to the list of registered repository folders.
+#
+# This project is licensed under the terms of the GNU GENERAL PUBLIC LICENSE version 3.
 
 CURRENT_DIR=$(pwd)
 
