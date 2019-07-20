@@ -103,4 +103,17 @@ cd "${FOLDER_BEFORE_WORK}"
 
 readonly STOPWATCH_STOP=$(date +%s)
 RUNTIME_SECONDS=$(( $STOPWATCH_STOP - $STOPWATCH_START ))
-echo -e "\nTotal runtime: "${RUNTIME_SECONDS}" seconds\n"
+if [ $RUNTIME_SECONDS -gt 59 ]
+then
+    RUNTIME_MINUTES=$(( $RUNTIME_SECONDS / 60 ))
+    RUNTIME_REMAINDER_SECONDS=$(( $RUNTIME_SECONDS - 60*$RUNTIME_MINUTES ))
+
+    if [ $RUNTIME_MINUTES -eq 1 ]
+    then
+        echo -e "\nTotal runtime: 1 minute and "${RUNTIME_REMAINDER_SECONDS}" seconds\n"
+    else
+        echo -e "\nTotal runtime: "${RUNTIME_MINUTES}" minutes and "${RUNTIME_REMAINDER_SECONDS}" seconds\n"
+    fi
+else
+    echo -e "\nTotal runtime: "${RUNTIME_SECONDS}" seconds"
+fi
