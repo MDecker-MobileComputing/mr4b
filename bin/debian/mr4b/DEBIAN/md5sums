@@ -1,0 +1,11 @@
+6987901cc04cf40e2db9e82161054c55  usr/bin/mr4b
+604b20afc4d932e1d0f65c3ee37842bf  usr/bin/mr4b_includes/AboutThisFolder.txt
+5155412a80221433298104597f565ac8  usr/bin/mr4b_includes/mr4b_CreateRepoFile.sh
+bbc9b01dfe23650806d8f55ab61decf4  usr/bin/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh
+322301670473954631b7544dcbd1cb8a  usr/bin/mr4b_includes/mr4b_RegisterRecursively.sh
+8be1a7708335caa2f39b3befcb358093  usr/bin/mr4b_includes/mr4b_RegisterRepo.sh
+e8570275f7945a8b749bf0c7bea93713  usr/bin/mr4b_includes/mr4b_help.txt
+9fc97a8400d40082c98622e9e4d79e9d  usr/share/doc/mr4b/README.Debian
+ef32e28ca24cc8410656174c718d1e4d  usr/share/doc/mr4b/changelog.gz
+dd45459f1df50076a215a5e03ee47ed7  usr/share/doc/mr4b/copyright
+04aea4cd83f2ad4e8f9731a3da5fc794  usr/share/man/man1/mr4b.1.gz

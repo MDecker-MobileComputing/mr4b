@@ -1,0 +1,9 @@
+Package: mr4b
+Version: 1.0
+Architecture: all
+Maintainer: MDecker MobileComputing <mide_42b@yahoo.de>
+Installed-Size: 28
+Section: devel
+Priority: optional
+Homepage: https://github.com/MDecker-MobileComputing/mr4b
+Description: Utility to perform mass operations on Git repositories.

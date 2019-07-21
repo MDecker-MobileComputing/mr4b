@@ -1,0 +1,4 @@
+# Datei enthaelt Pfade der zu installierenden Man-Pages.
+# siehe auch "man dh_installman"
+doc/man/mr4b.1
+

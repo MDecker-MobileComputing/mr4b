@@ -1,0 +1,11 @@
+mr4b (1.0) UNRELEASED; urgency=medium
+
+  * First version for productive use
+
+ -- MDecker MobileComputing <mide_42b@yahoo.de>  Sat, 20 Jul 2019 13:29:23 +0200
+
+mr4b (0.9-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- MDecker MobileComputing <mide_42b@yahoo.de>  Sat, 20 Jul 2019 11:24:16 +0200
