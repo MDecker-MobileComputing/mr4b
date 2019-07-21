@@ -1,4 +1,0 @@
-
-This folder contains Bash script files to be called by mr4b.
-
-This folder must not appear in the PATH variable.

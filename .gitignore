@@ -1,7 +1,7 @@
-# ignore gzipped manpage
+# Ignore gzipped manpage
 *.gz
 
-# ignore files which are created by "debuild -uc -us"
+# Ignore files which were created by "dh_make".
 *.dsc
 *.tar.gz
 *.deb
@@ -9,3 +9,6 @@
 *.buildinfo
 *.changes
 
+# Ignore folders which are created by "debuild".
+bin/debian/.debhelper/
+bin/debian/mr4b/
