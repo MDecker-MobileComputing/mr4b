@@ -27,7 +27,9 @@ REPO_LIST_FILE=~/.mr4b_repos
 readonly VERSION_OF_MR4B=1.0
 
 
-# Evaluate CmdLine arguments.
+# Evaluate CmdLine arguments. When branch for an argument does not call "exit" (i.e. other
+# relevant branches might have to be processed, then "shift" has to be used to remove the
+# already processed arguments.
 while [[ $# -gt 0 ]]
 do
     CURR_ARG="$1"
@@ -66,7 +68,7 @@ do
             exit
         ;;
 
-        config) # all supported Git commands WITH one argument
+        config) # all supported Git commands WITH exactly one argument
             if [ -z "$2" ]
             then
                 echo -e "\nINVALID COMMAND: Missing argument for \""$CURR_ARG"\".\n"
@@ -85,6 +87,7 @@ do
             echo -e "\nUnknown token in command line arguments: \""$1"\n"
             HINT_HELP_COMMAND
             exit
+        ;;
     esac
 done
 
