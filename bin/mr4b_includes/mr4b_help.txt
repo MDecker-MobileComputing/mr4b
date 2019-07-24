@@ -17,6 +17,8 @@ List of commands:
                          current folder.
 
     version: Outputs info about current version of program.
+    
+    check: Checks for Git client.
 
     status: Git command "status" on all registered repositories.
 
