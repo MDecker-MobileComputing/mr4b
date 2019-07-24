@@ -10,10 +10,11 @@ if [ ! -f "${REPO_LIST_FILE}" ]
 then
     source $(dirname "$0")/mr4b_includes/mr4b_CreateRepoFile.sh
 else
-    grep "${CURRENT_DIR}" "${REPO_LIST_FILE}" > /dev/null 2> /dev/null
+    REGEXP_STRING="^"${CURRENT_DIR}"$" # Line must match exactly, so that a parent folder of a registered folder is not considered as already registered
+    grep $REGEXP_STRING "${REPO_LIST_FILE}" > /dev/null 2> /dev/null
     if [ $? -eq 0 ]
     then
-        echo -e "\nCurrent folder is already registered.\n"
+        echo -e "\nCurrent folder is already registered, will do nothing.\n"
         exit
     fi
 fi

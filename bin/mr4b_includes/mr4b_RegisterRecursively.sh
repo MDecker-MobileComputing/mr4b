@@ -40,7 +40,8 @@ do
 
   CURRENT_FOLDER=$(pwd)
 
-  grep "${CURRENT_FOLDER}" "${REPO_LIST_FILE}" > /dev/null
+  REGEXP_STRING="^"${CURRENT_FOLDER}"$" # Line must match exactly, so that a parent folder of a registered folder is not considered as already registered
+  grep REGEXP_STRING "${REPO_LIST_FILE}" > /dev/null
   if [ $? -eq 0 ]
   then
     echo -e "Skipping folder, because is already registered.\n"
