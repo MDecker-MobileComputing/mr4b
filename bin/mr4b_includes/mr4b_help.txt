@@ -24,7 +24,8 @@ List of commands:
 
     fetch: Git command "fetch" on all registered repositories.
 
-    gc: Git command "gc --auto" (garbage collection if needed).
+    gc: Git command "gc --auto" (garbage collection if needed) on all 
+        registered repositories.
 
 
 Repository List File ~/.mr4b_repos
@@ -35,5 +36,10 @@ Repository List File ~/.mr4b_repos
     are ignored. 
     
     The file will be created upon the first (successful) registration operation.
-
-
+    
+    The commands "register" and "registerRecursively" ensure that no folder
+    is listed more than just once in this file.
+    
+    You can specify a custom Repository List File with option --file 
+    (short form: -f).
+    Example: mr4b --file /path/to/custom/GitRepoFile status

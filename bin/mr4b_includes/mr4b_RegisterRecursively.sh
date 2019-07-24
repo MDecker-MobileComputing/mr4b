@@ -40,7 +40,8 @@ do
 
   CURRENT_FOLDER=$(pwd)
 
-  REGEXP_STRING="^"${CURRENT_FOLDER}"$" # Line must match exactly, so that a parent folder of a registered folder is not considered as already registered
+  # Line must match exactly, so that a parent folder of a registered folder is not considered as already registered.
+  REGEXP_STRING="^"${CURRENT_FOLDER}"$" 
   grep REGEXP_STRING "${REPO_LIST_FILE}" > /dev/null
   if [ $? -eq 0 ]
   then
