@@ -8,7 +8,7 @@
 function HINT_HELP_COMMAND() {
     echo -e "\nUsage: mr4b [-f /path/to/custom/GitRepoListFile] <Command>\n"
     echo -e "  <Command>: help, version, register, registerRecursively, <SupportedGitCommand>\n"
-    echo -e "  <SupportedGitCommand>: status, fetch, pull, gc\n"
+    echo -e "  <SupportedGitCommand>: status, fetch, pull, gc, config [arg]\n"
     echo -e "Call 'mr4b help' for more details.\n"
     exit
 }
@@ -56,8 +56,18 @@ do
             exit
         ;;
 
-        pull|fetch|merge|status|gc) # all supported Git commands
-            source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh
+        pull|fetch|merge|status|gc) # all supported Git commands WITHOUT argument
+            source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $CURR_ARG
+            exit
+        ;;
+
+        config) # all supported Git commands WITH one argument
+            if [ -z "$2" ]
+            then
+                echo -e "\nINVALID COMMAND: Missing argument for \""$CURR_ARG"\".\n"
+                exit
+            fi
+            source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $CURR_ARG "$2"
             exit
         ;;
 

@@ -23,9 +23,12 @@ List of commands:
     pull: Git command "pull" on all registered repositories.
 
     fetch: Git command "fetch" on all registered repositories.
-
+    
     gc: Git command "gc --auto" (garbage collection if needed) on all 
         registered repositories.
+
+    config <arg>: Git command "config <arg> on all registered reositories,
+                  e.g. "mr4b config user.name" or "mr4b config user.email".
 
 
 Repository List File ~/.mr4b_repos
@@ -43,3 +46,4 @@ Repository List File ~/.mr4b_repos
     You can specify a custom Repository List File with option --file 
     (short form: -f).
     Example: mr4b --file /path/to/custom/GitRepoFile status
+    If --file/-f is used, then it must appear before the command.

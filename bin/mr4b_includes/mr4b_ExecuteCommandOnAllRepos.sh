@@ -5,19 +5,21 @@
 # This project is licensed under the terms of the GNU GENERAL PUBLIC LICENSE version 3.
 
 
-if [ $# -ne 1 ]
+if [ $# -eq 0 ]
 then
-    echo -e "\nINTERNAL ERROR: No git command passed. Aborting program."
+    echo -e "\nINTERNAL ERROR: No Git command passed. Aborting program."
     exit
 fi
 
 readonly GIT_COMMAND=$1
+readonly GIT_ARGUMENT=$2 # might be empty
 
 readonly STOPWATCH_START=$(date +%s) # Store number of seconds since 1st January 2019
 
+echo "GIT_COMMAND="$GIT_COMMAND
 
 # Whitelisting supported Git commands
-if [ ! $GIT_COMMAND == "pull" -a ! $GIT_COMMAND == "fetch" -a $GIT_COMMAND == "merge" -a ! $GIT_COMMAND == "status" -a ! $GIT_COMMAND == "gc" ]
+if [ $GIT_COMMAND != "pull" -a  $GIT_COMMAND != "fetch" -a $GIT_COMMAND != "merge" -a $GIT_COMMAND != "status" -a $GIT_COMMAND != "gc" -a $GIT_COMMAND != "config" ]
 then
     echo -e "\nUnsupported command '"${GIT_COMMAND}"' -- aborting program.\n"
     exit
@@ -66,7 +68,7 @@ fi
 
 
 # For Git commands which perform networks requests a sleep time is to be enforced between the
-# command executions to prevent too much load .
+# command executions to prevent too much load on the Git server.
 SLEEP_TIME_SECONDS=0
 if [ $GIT_COMMAND == "pull" -o $GIT_COMMAND == "fetch" ]
 then
@@ -86,7 +88,7 @@ for REPO_FOLDER in "${REPO_FOLDERS_ARRAY[@]}"
 do
   echo -e "\nProcessing repository folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):"
   cd $REPO_FOLDER
-  git $GIT_COMMAND
+  git $GIT_COMMAND $GIT_ARGUMENT
   echo
 
   if [ $SLEEP_TIME_SECONDS -gt 0 -a $COUNTER -lt $NUMBER_REPO_FOLDERS ]
