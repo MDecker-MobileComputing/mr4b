@@ -82,49 +82,14 @@ Since the latter one requires network interaction, *mr4b* will wait a few second
 <br>
 
 ----
-# Build Debian package
+# Build deb or rpm package ##
 
-On a Debian-based distribution (e.g., Debian itself, Ubuntu or Raspian) you can build a `.deb` file:
-
-* Prerequisites:
-
-    * Ensure that package [devscripts](https://packages.debian.org/jessie/devscripts) is installed.
-
-    * If you want to build an rpm package you also need [alien](https://packages.debian.org/jessie/alien).
-
-<br>    
-
-* Change in the `bin/` folder in this repository.
-
-* Update the version number:
-
-    * Create changelog entry for new version to be packaged:
-
-          dch --newversion <version>
-
-        The invocation of this command will open a text editor we you can add some text in the newly created section of the changelog file for that version.
-
-    * Also update the date and version number in file `bin/doc/man/mr4b.1` (line begins with `.TH`). 
-
-    * Also change the version in the main script file `bin/mr4b`:
-
-          readonly VERSION_OF_MR4B=<version>
-<br>
-
-* Execute command [debuild](https://manpages.debian.org/jessie/devscripts/debuild.1.en.html):
-
-      debuild -uc -us
-
-* After this you should find a newly build file with a name according to the following pattern `mr4b_<version>_all.deb` in the root folder of the repository. The `all` means that the package can be installed on all CPU architectures, since it only contains Bash scripts and no executable binaries.
-
-* Afterwards you can also build an installation package for rpm-based distributions like Red Hat and OpenSuse using
-[alien](https://manpages.debian.org/buster/alien/alien.1p.en.html):
-
-      alien --to-rpm --scripts mr4b_<version>_all.deb
+In the [wiki belonging to this repository](https://github.com/MDecker-MobileComputing/mr4b/wiki) you can find pages describing 
+[how to build a deb package](https://github.com/MDecker-MobileComputing/mr4b/wiki/Build-Debian-package) and [how to build a rpm package](https://github.com/MDecker-MobileComputing/mr4b/wiki/Build-RPM-file) with *mr4b*.
 
 <br>
 
 ----
-# License
+# License #
 
 See the [LICENSE file](LICENSE.md) for license rights and limitations (GPL v3).
