@@ -1,4 +1,4 @@
-# My Git-Repositories for Bash (mr4b) ##
+# My Git-Repositories for Bash (mr4b) #
 
 *mr4b* is a command line utility to perform mass operations on [Git](https://git-scm.com/) repositories on the local machine.
 It is just a collection of Bash scripts and therefore should run on most Linux(-like) environments.
