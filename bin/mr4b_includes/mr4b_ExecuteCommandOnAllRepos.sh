@@ -16,7 +16,7 @@ readonly GIT_ARGUMENT=$2 # might be empty
 
 readonly STOPWATCH_START=$(date +%s) # Store number of seconds since 1st January 2019
 
-echo "GIT_COMMAND="$GIT_COMMAND
+#echo "GIT_COMMAND="$GIT_COMMAND
 
 # Whitelisting supported Git commands
 if [ $GIT_COMMAND != "pull" -a  $GIT_COMMAND != "fetch" -a $GIT_COMMAND != "merge" -a $GIT_COMMAND != "status" -a $GIT_COMMAND != "gc" -a $GIT_COMMAND != "config" ]
@@ -117,5 +117,5 @@ then
         echo -e "\nTotal runtime: "${RUNTIME_MINUTES}" minutes and "${RUNTIME_REMAINDER_SECONDS}" seconds\n"
     fi
 else
-    echo -e "\nTotal runtime: "${RUNTIME_SECONDS}" seconds"
+    echo -e "\nTotal runtime: "${RUNTIME_SECONDS}" seconds\n"
 fi
