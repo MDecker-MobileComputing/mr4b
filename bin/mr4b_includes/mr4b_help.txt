@@ -49,3 +49,4 @@ Repository List File ~/.mr4b_repos
     (short form: -f).
     Example: mr4b --file /path/to/custom/GitRepoFile status
     If --file/-f is used, then it must appear before the command.
+
