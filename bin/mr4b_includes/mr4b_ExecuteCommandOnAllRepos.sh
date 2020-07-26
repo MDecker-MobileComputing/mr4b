@@ -86,7 +86,7 @@ FOLDER_BEFORE_WORK=$(pwd)
 COUNTER=1
 for REPO_FOLDER in "${REPO_FOLDERS_ARRAY[@]}"
 do
-  echo -e "\nProcessing repository folder "${REPO_FOLDER}" ("${COUNTER}" of "${NUMBER_REPO_FOLDERS}"):"
+  echo -e "\nProcessing repository folder "${COUNTER}" of "${NUMBER_REPO_FOLDERS}": "${REPO_FOLDER}
   cd $REPO_FOLDER
   git $GIT_COMMAND $GIT_ARGUMENT
   echo
