@@ -78,7 +78,6 @@ then
 fi
 
 
-
 # ### Execute the git command in all the relevant repository folders ###
 
 FOLDER_BEFORE_WORK=$(pwd)
