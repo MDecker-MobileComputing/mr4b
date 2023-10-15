@@ -1,11 +1,15 @@
 # My Git-Repositories for Bash (mr4b) #
 
+<br>
+
 *mr4b* is a command line utility to perform mass operations on [Git](https://git-scm.com/) repositories on the local machine.
 It is just a collection of Bash scripts and therefore should run on most Linux(-like) environments.
 
 <br>
 
 ----
+
+<br>
 
 - [My Git-Repositories for Bash (mr4b)](#my-git-repositories-for-bash-mr4b)
   - [About mr4b](#about-mr4b)
@@ -26,6 +30,8 @@ It is just a collection of Bash scripts and therefore should run on most Linux(-
 
 ## About mr4b ##
 
+<br>
+
 In contrast to many competiting solutions for performing mass operations on Git repositories, *mr4b* does
 not required a special scripting language like Python or Perl and therefore should also run on most
 restricted or "emulated" Linux environments with the Bash shell and Git.
@@ -41,6 +47,8 @@ and also on MacOS.
 ----
 
 ## Installation ##
+
+<br>
 
 The `PATH` variable mentioned in this sections means the environment variable `PATH`
 of your Linux environment.
@@ -61,6 +69,8 @@ of your Linux environment.
 ----
 
 ## Basic usage ##
+
+<br>
 
 After installation you can enter `mb4r help` to obtain usage hints, which outputs the content of [this help file](bin/mr4b_includes/mr4b_help.txt).
 
@@ -112,12 +122,19 @@ Since the latter one requires network interaction, *mr4b* will wait a few second
 
 ## Build deb or rpm package ##
 
+<br>
+
 In the [wiki belonging to this repository](https://github.com/MDecker-MobileComputing/mr4b/wiki) you can find pages describing
 [how to build a deb package](https://github.com/MDecker-MobileComputing/mr4b/wiki/Build-Debian-package) and [how to build a rpm package](https://github.com/MDecker-MobileComputing/mr4b/wiki/Build-RPM-file) with *mr4b*.
 
 <br>
 
 ----
+
 ## License ##
 
+<br>
+
 See the [LICENSE file](LICENSE.md) for license rights and limitations (GPL v3).
+
+<br>
