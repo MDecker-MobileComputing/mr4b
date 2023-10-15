@@ -54,14 +54,14 @@ do
         ;;
 
         version)
-            echo -e "\nVersion "${VERSION_OF_MR4B}" of mr4b."
+            echo -e "\nVersion "${VERSION_OF_MR4B}" of mr4b.\n"
             exit
         ;;
-        
+
         check)
             source $(dirname "$0")/mr4b_includes/mr4b_Check.sh
-            exit 
-        ;; 
+            exit
+        ;;
 
         pull|fetch|merge|status|gc) # all supported Git commands WITHOUT argument
             source $(dirname "$0")/mr4b_includes/mr4b_ExecuteCommandOnAllRepos.sh $CURR_ARG
